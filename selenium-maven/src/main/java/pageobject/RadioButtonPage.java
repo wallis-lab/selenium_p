@@ -24,7 +24,7 @@ public class RadioButtonPage extends PageObject {
 
 	private WebElement getRadioButtonElement(String string) {
 		// TODO Auto-generated method stub
-		return driver.findElement(By.xpath("//*[@id=\'"+string+"\']/li[3]/a"));
+		return driver.findElement(By.xpath("//*[@id=\'" + string + "\']/li[3]/a"));
 
 	}
 
@@ -43,8 +43,7 @@ public class RadioButtonPage extends PageObject {
 
 	public WebElement gettext1() {
 		// TODO Auto-generated method stub
-	
-		
+
 		return driver.findElement(By.xpath("/html/body/main/div/div/div[2]/form/div[1]/label"));
 	}
 
