@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import pagefoundation.TutorialsPointTestBase;
 import pageobject.TestBoxPage;
 
-public class TextBox extends TutorialsPointTestBase {
+public class TextBoxTest extends TutorialsPointTestBase {
 
 	@Test
 	public void canGetDriverType() {

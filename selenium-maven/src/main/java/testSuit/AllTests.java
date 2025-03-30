@@ -6,11 +6,12 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import Web_Elements.RadioButtonTest;
-import Web_Elements.TextBox;
+import Web_Elements.TextBoxTest;
+import Web_Elements.WebTablesTest;
 import Web_Elements.checkBoxTest;
 
 @RunWith(Suite.class)
-@SuiteClasses({TextBox.class , checkBoxTest.class , RadioButtonTest.class})
+@SuiteClasses({TextBoxTest.class , checkBoxTest.class , RadioButtonTest.class , WebTablesTest.class})
 
 public class AllTests {
 
