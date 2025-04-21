@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.JavascriptExecutor;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -76,13 +77,11 @@ public class CheckBoxPage extends PageObject {
 	    WebElement LastLevel16 = getLastLevel16Element("//*[@id=\"c_bf_4\"]");
 	    wait.until(ExpectedConditions.elementToBeClickable(LastLevel16));
 	    js.executeScript("arguments[0].scrollIntoView(true);", LastLevel16);
-	    LastLevel16.click();
-
-	    // 再次尝试点击
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-	    wait.until(ExpectedConditions.elementToBeClickable(LastLevel16));
-	    js.executeScript("arguments[0].scrollIntoView(true);", LastLevel16);
-	    js.executeScript("arguments[0].click();", LastLevel16);  // 使用JavaScript点击
+	    try {
+	        LastLevel16.click();  // Try clicking normally
+	    } catch (ElementClickInterceptedException e) {
+	        js.executeScript("arguments[0].click();", LastLevel16);  // Fallback to JavaScript click
+	    }
 
 	    WebElement LastLevel15 = getLastLevel15Element("//*[@id=\"c_io_15\"]");
 	    wait.until(ExpectedConditions.elementToBeClickable(LastLevel15));
@@ -92,11 +91,16 @@ public class CheckBoxPage extends PageObject {
 	    WebElement LastLevel151 = getLastLevel151Element("//*[@id=\"c_io_16\"]");
 	    wait.until(ExpectedConditions.elementToBeClickable(LastLevel151));
 	    js.executeScript("arguments[0].scrollIntoView(true);", LastLevel151);
-	    Thread.sleep(500); // 等待页面稳定
-	    js.executeScript("arguments[0].click();", LastLevel151);  // 使用JavaScript点击
+	    Thread.sleep(500); // Wait for page stability
+	    try {
+	        LastLevel151.click();  // Try clicking normally
+	    } catch (ElementClickInterceptedException e) {
+	        js.executeScript("arguments[0].click();", LastLevel151);  // Fallback to JavaScript click
+	    }
 
 	    return new CheckBoxPage(driver, baseUrl);
 	}
+
 
 
 	private WebElement getLastLevel151Element(String string) {
