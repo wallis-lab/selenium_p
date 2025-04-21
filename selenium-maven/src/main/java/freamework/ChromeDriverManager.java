@@ -2,6 +2,7 @@ package freamework;
 
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class ChromeDriverManager extends DriverManager{
 	private final String WEB_DRIVER_SYSTEM_PROPERTY_CHROME = "webdriver.chrome.driver";
@@ -9,6 +10,10 @@ public class ChromeDriverManager extends DriverManager{
 
 	ChromeDriverManager(){
 		System.setProperty(WEB_DRIVER_SYSTEM_PROPERTY_CHROME, chromeDriverPath);
+	}
+
+	public ChromeDriverManager(ChromeOptions options) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public void createDriver() {

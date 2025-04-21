@@ -42,18 +42,18 @@ public class ModelDialogsPage extends PageObject {
 	}
 	
 	public ModelDialogsPage clickAlertPage() {
-		WebElement textbox = getAlertPageElement("headingThree");
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    wait.until(ExpectedConditions.elementToBeClickable(textbox));
-		
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", textbox);
-		 js.executeScript("window.scrollBy(0, 300);"); // 模拟滚轮下滑
-		textbox.click();
+	    WebElement textbox = getAlertPageElement("headingThree");
 
-		return new ModelDialogsPage(driver, baseUrl);
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", textbox);
 
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.elementToBeClickable(textbox));  // 加上这一句
+
+	    textbox.click();
+
+	    return new ModelDialogsPage(driver, baseUrl);
 	}
+
 
 	private WebElement getAlertPageElement(String string) {
 		
