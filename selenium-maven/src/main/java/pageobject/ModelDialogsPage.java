@@ -3,6 +3,7 @@ package pageobject;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -35,6 +36,7 @@ public class ModelDialogsPage extends PageObject {
 	
 	public ModelDialogsPage clickAlertPage() {
 		WebElement textbox = getAlertPageElement("headingThree");
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", textbox);
 
 		textbox.click();
 
