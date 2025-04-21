@@ -21,8 +21,13 @@ public class ModelDialogsPage extends PageObject {
 
 	public ModelDialogsPage clickModelDialogsPage() {
 		WebElement textbox = getCheckPageElement("collapseThree");
-
-		textbox.click();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.elementToBeClickable(textbox));
+	    
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", textbox);
+	    textbox.click();
+		
 
 		return new ModelDialogsPage(driver, baseUrl);
 
@@ -36,6 +41,10 @@ public class ModelDialogsPage extends PageObject {
 	
 	public ModelDialogsPage clickAlertPage() {
 		WebElement textbox = getAlertPageElement("headingThree");
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.elementToBeClickable(textbox));
+		
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", textbox);
 
 		textbox.click();

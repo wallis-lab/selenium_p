@@ -2,19 +2,23 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-21T10:42:50 EDT" name="Default suite" finished-at="2025-04-21T10:42:53 EDT" duration-ms="3307">
+  <suite started-at="2025-04-21T10:51:44 EDT" name="Default suite" finished-at="2025-04-21T10:51:48 EDT" duration-ms="3691">
     <groups>
     </groups>
-    <test started-at="2025-04-21T10:42:50 EDT" name="Default test" finished-at="2025-04-21T10:42:53 EDT" duration-ms="3307">
+    <test started-at="2025-04-21T10:51:44 EDT" name="Default test" finished-at="2025-04-21T10:51:48 EDT" duration-ms="3691">
       <class name="ModalDialogsTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:ModalDialogsTest@30c15d8b]" started-at="2025-04-21T10:42:50 EDT" name="setup" finished-at="2025-04-21T10:42:51 EDT" duration-ms="1286" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:ModalDialogsTest@36fc695d]" started-at="2025-04-21T10:51:44 EDT" name="setup" finished-at="2025-04-21T10:51:46 EDT" duration-ms="1266" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="clickSmallModelOrLargeModel()[pri:0, instance:ModalDialogsTest@30c15d8b]" started-at="2025-04-21T10:42:51 EDT" name="clickSmallModelOrLargeModel" finished-at="2025-04-21T10:42:53 EDT" duration-ms="2004" status="PASS">
+        <test-method signature="clickSmallModelOrLargeModel()[pri:0, instance:ModalDialogsTest@36fc695d]" started-at="2025-04-21T10:51:46 EDT" name="clickSmallModelOrLargeModel" finished-at="2025-04-21T10:51:48 EDT" duration-ms="2306" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickSmallModelOrLargeModel -->
+        <test-method is-config="true" signature="cleanup()[pri:0, instance:ModalDialogsTest@36fc695d]" started-at="2025-04-21T10:51:48 EDT" name="cleanup" finished-at="2025-04-21T10:51:48 EDT" duration-ms="99" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanup -->
       </class> <!-- ModalDialogsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

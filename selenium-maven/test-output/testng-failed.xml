@@ -7,6 +7,7 @@
         <methods>
           <include name="clickSmallModelOrLargeModel"/>
           <include name="setup"/>
+          <include name="cleanup"/>
         </methods>
       </class> <!-- ModalDialogsTest -->
     </classes>
