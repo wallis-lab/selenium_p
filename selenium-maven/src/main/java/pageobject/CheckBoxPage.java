@@ -9,6 +9,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import freamework.PageObject;
 import pagefoundation.TutorialsPointTestBase;
@@ -58,39 +60,44 @@ public class CheckBoxPage extends PageObject {
 	}
 
 	public CheckBoxPage clickMainLevel2andSublevel4andLastLevel16() throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	    WebElement MainLevel2 = getMainLevel2Element("//*[@id='bs_2']/span[1]");
+	    wait.until(ExpectedConditions.elementToBeClickable(MainLevel2));
+	    js.executeScript("arguments[0].scrollIntoView(true);", MainLevel2);
+	    MainLevel2.click();
 
-		WebElement MainLevel2 = getMainLevel2Element("//*[@id='bs_2']/span[1]");
+	    WebElement SubLevel4 = getSubLevel4Element("//*[@id='bf_4']/span[1]");
+	    wait.until(ExpectedConditions.elementToBeClickable(SubLevel4));
+	    js.executeScript("arguments[0].scrollIntoView(true);", SubLevel4);
+	    SubLevel4.click();
 
-		MainLevel2.click();
+	    WebElement LastLevel16 = getLastLevel16Element("//*[@id=\"c_bf_4\"]");
+	    wait.until(ExpectedConditions.elementToBeClickable(LastLevel16));
+	    js.executeScript("arguments[0].scrollIntoView(true);", LastLevel16);
+	    LastLevel16.click();
 
-		WebElement SubLevel4 = getSubLevel4Element("//*[@id='bf_4']/span[1]");
+	    // 再次尝试点击
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+	    wait.until(ExpectedConditions.elementToBeClickable(LastLevel16));
+	    js.executeScript("arguments[0].scrollIntoView(true);", LastLevel16);
+	    js.executeScript("arguments[0].click();", LastLevel16);  // 使用JavaScript点击
 
-		SubLevel4.click();
+	    WebElement LastLevel15 = getLastLevel15Element("//*[@id=\"c_io_15\"]");
+	    wait.until(ExpectedConditions.elementToBeClickable(LastLevel15));
+	    js.executeScript("arguments[0].scrollIntoView(true);", LastLevel15);
+	    LastLevel15.click();
 
-		WebElement LastLevel16 = getLastLevel16Element("//*[@id=\"c_bf_4\"]");
+	    WebElement LastLevel151 = getLastLevel151Element("//*[@id=\"c_io_16\"]");
+	    wait.until(ExpectedConditions.elementToBeClickable(LastLevel151));
+	    js.executeScript("arguments[0].scrollIntoView(true);", LastLevel151);
+	    Thread.sleep(500); // 等待页面稳定
+	    js.executeScript("arguments[0].click();", LastLevel151);  // 使用JavaScript点击
 
-		LastLevel16.click();
-
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-		LastLevel16.click();
-
-		WebElement LastLevel15 = getLastLevel15Element("//*[@id=\"c_io_15\"]");
-
-		LastLevel15.click();
-
-		WebElement LastLevel151 = getLastLevel151Element("//*[@id=\"c_io_16\"]");
-
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", LastLevel151);
-		Thread.sleep(500); // 可选，等待页面稳定
-
-		LastLevel151.click();
-
-		return new CheckBoxPage(driver, baseUrl);
-
+	    return new CheckBoxPage(driver, baseUrl);
 	}
+
 
 	private WebElement getLastLevel151Element(String string) {
 		// TODO Auto-generated method stub
