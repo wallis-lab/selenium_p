@@ -10,10 +10,8 @@ public class TestngTest extends TutorialsPointTestBase{
 	public void canClickMainLevelwithtestNG() throws InterruptedException {
 		
 		new CheckBoxPage(driver, baseUrl).clickCheckBoxPage()
-		.clickSubLevel1();
-		
-		/*.clickLastLevel1()
-		.clickMainLevel2andSublevel4andLastLevel16();*/
+		.clickSubLevel1().clickLastLevel1()
+		.clickMainLevel2andSublevel4andLastLevel16();
 	}
 
 }
