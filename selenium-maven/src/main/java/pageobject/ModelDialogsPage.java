@@ -20,12 +20,14 @@ public class ModelDialogsPage extends PageObject {
 	}
 
 	public ModelDialogsPage clickModelDialogsPage() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebElement textbox = getCheckPageElement("collapseThree");
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    wait.until(ExpectedConditions.elementToBeClickable(textbox));
 	    
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", textbox);
+	    js.executeScript("window.scrollBy(0, 300);"); // 模拟滚轮下滑
 	    textbox.click();
 		
 
@@ -41,12 +43,12 @@ public class ModelDialogsPage extends PageObject {
 	
 	public ModelDialogsPage clickAlertPage() {
 		WebElement textbox = getAlertPageElement("headingThree");
-		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    wait.until(ExpectedConditions.elementToBeClickable(textbox));
 		
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", textbox);
-
+		 js.executeScript("window.scrollBy(0, 300);"); // 模拟滚轮下滑
 		textbox.click();
 
 		return new ModelDialogsPage(driver, baseUrl);
