@@ -59,7 +59,7 @@ public class CheckBoxPage extends PageObject {
 
 	public CheckBoxPage clickMainLevel2andSublevel4andLastLevel16() throws InterruptedException {
 
-		// driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 		WebElement MainLevel2 = getMainLevel2Element("//*[@id='bs_2']/span[1]");
 
