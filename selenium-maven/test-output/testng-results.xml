@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-30T15:07:38 EDT" name="Suite" finished-at="2025-03-30T15:07:38 EDT" duration-ms="22">
+  <suite started-at="2025-04-21T02:12:31 EDT" name="Default suite" finished-at="2025-04-21T02:12:33 EDT" duration-ms="2301">
     <groups>
     </groups>
-    <test started-at="2025-03-30T15:07:38 EDT" name="Test" finished-at="2025-03-30T15:07:38 EDT" duration-ms="22">
+    <test started-at="2025-04-21T02:12:31 EDT" name="Default test" finished-at="2025-04-21T02:12:33 EDT" duration-ms="2301">
       <class name="TestngTest">
-        <test-method signature="testOne()[pri:0, instance:TestngTest@15eb5ee5]" started-at="2025-03-30T15:07:38 EDT" name="testOne" finished-at="2025-03-30T15:07:38 EDT" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestngTest@28701274]" started-at="2025-04-21T02:12:31 EDT" name="setup" finished-at="2025-04-21T02:12:32 EDT" duration-ms="1194" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testOne -->
+        </test-method> <!-- setup -->
+        <test-method signature="canClickMainLevelwithtestNG()[pri:0, instance:TestngTest@28701274]" started-at="2025-04-21T02:12:32 EDT" name="canClickMainLevelwithtestNG" finished-at="2025-04-21T02:12:33 EDT" duration-ms="1005" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canClickMainLevelwithtestNG -->
+        <test-method is-config="true" signature="cleanup()[pri:0, instance:TestngTest@28701274]" started-at="2025-04-21T02:12:33 EDT" name="cleanup" finished-at="2025-04-21T02:12:33 EDT" duration-ms="83" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanup -->
       </class> <!-- TestngTest -->
-      <class name="TestngTest1">
-        <test-method signature="testOne()[pri:0, instance:TestngTest1@28eaa59a]" started-at="2025-03-30T15:07:38 EDT" name="testOne" finished-at="2025-03-30T15:07:38 EDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testOne -->
-      </class> <!-- TestngTest1 -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

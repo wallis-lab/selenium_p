@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 public abstract class TestBase {
 	protected WebDriver driver;
@@ -17,6 +19,7 @@ public abstract class TestBase {
 		this.baseUrl = baseUrl;
 	}
 	
+	@BeforeMethod
 	@Before
 	public void setup() {
 		String driverType= getDriverType();
@@ -42,6 +45,7 @@ public abstract class TestBase {
 		return propertie.getProperty("browserType");
 	}
 	
+	@AfterMethod
 	@After
 	public void cleanup() {
 		if (this.manager != null) {

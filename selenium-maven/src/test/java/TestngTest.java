@@ -1,12 +1,17 @@
 import org.testng.annotations.Test;
 
-public class TestngTest {
+import pagefoundation.TutorialsPointTestBase;
+import pageobject.CheckBoxPage;
+
+public class TestngTest extends TutorialsPointTestBase{
 	
 	
 	@Test
-	public void testOne() {
+	public void canClickMainLevelwithtestNG() throws InterruptedException {
 		
-		System.out.print("Executed TestOne");
+		new CheckBoxPage(driver, baseUrl).clickCheckBoxPage()
+		.clickSubLevel1().clickLastLevel1()
+		.clickMainLevel2andSublevel4andLastLevel16();
 	}
 
 }

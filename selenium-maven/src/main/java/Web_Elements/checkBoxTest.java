@@ -1,6 +1,5 @@
 package Web_Elements;
 
-import static org.junit.Assert.*;
 
 import org.junit.Test;
 
