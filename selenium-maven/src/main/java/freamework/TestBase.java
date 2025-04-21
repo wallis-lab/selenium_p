@@ -45,10 +45,10 @@ public abstract class TestBase {
 		return propertie.getProperty("browserType");
 	}
 	
-	@AfterMethod
+	/*@AfterMethod
 	@After
 	public void cleanup() {
 		if (this.manager != null) {
 		this.manager.quitDriver();
-	}}
+	}}*/
 }
